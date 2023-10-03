@@ -385,11 +385,6 @@
           <GroupName>root</GroupName>
           <Files>
             <File>
-              <FileName>mframe.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\mframe.h</FilePath>
-            </File>
-            <File>
               <FileName>package-info.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\package-info.h</FilePath>
@@ -1817,11 +1812,6 @@
           <GroupName>root</GroupName>
           <Files>
             <File>
-              <FileName>mframe.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\mframe.h</FilePath>
-            </File>
-            <File>
               <FileName>package-info.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\package-info.h</FilePath>
@@ -3248,11 +3238,6 @@
         <Group>
           <GroupName>root</GroupName>
           <Files>
-            <File>
-              <FileName>mframe.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\mframe.h</FilePath>
-            </File>
             <File>
               <FileName>package-info.h</FileName>
               <FileType>5</FileType>

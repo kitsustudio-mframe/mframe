@@ -15,7 +15,7 @@
 
 //-----------------------------------------------------------------------------
 #include "mframe/hal/usart/USART.h"
-#include "mframe\io\OutputStream.h"
+#include "mframe/io/OutputStream.h"
 
 /* ****************************************************************************
  * Namespace

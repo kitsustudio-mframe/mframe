@@ -14,8 +14,8 @@
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-#include "mframe\lang\Object.h"
-#include "mframe\util\CommandHandler.h"
+#include "mframe/lang/Object.h"
+#include "mframe/util/CommandHandler.h"
 
 /* ****************************************************************************
  * Namespace

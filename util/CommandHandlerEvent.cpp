@@ -13,8 +13,8 @@
 #include "CommandHandlerEvent.h"
 
 //-----------------------------------------------------------------------------
-#include "mframe\lang\System.h"
-#include "mframe\lang\sys\ErrorCode.h"
+#include "mframe/lang/System.h"
+#include "mframe/lang/sys/ErrorCode.h"
 
 /* ****************************************************************************
  * Macro

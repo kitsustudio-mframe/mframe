@@ -14,9 +14,9 @@
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-#include "mframe\io\ReadBuffer.h"
-#include "mframe\io\WriteBuffer.h"
-#include "mframe\lang\Object.h"
+#include "mframe/io/ReadBuffer.h"
+#include "mframe/io/WriteBuffer.h"
+#include "mframe/lang/Object.h"
 
 /* ****************************************************************************
  * Namespace

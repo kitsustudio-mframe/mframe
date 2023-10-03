@@ -15,9 +15,9 @@
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-#include "mframe\io\Buffer.h"
-#include "mframe\lang\Memory.h"
-#include "mframe\lang\Strings.h"
+#include "mframe/io/Buffer.h"
+#include "mframe/lang/Memory.h"
+#include "mframe/lang/Strings.h"
 
 /* ****************************************************************************
  * Namespace

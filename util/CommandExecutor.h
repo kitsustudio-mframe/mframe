@@ -14,13 +14,13 @@
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-#include "mframe\io\PrintBuffer.h"
-#include "mframe\lang\Executor.h"
-#include "mframe\lang\Strings.h"
-#include "mframe\util\ArrayMap.h"
-#include "mframe\util\CommandHandler.h"
-#include "mframe\util\CommandHandlerDefaultHelp.h"
-#include "mframe\util\Scanner.h"
+#include "mframe/io/PrintBuffer.h"
+#include "mframe/lang/Executor.h"
+#include "mframe/lang/Strings.h"
+#include "mframe/util/ArrayMap.h"
+#include "mframe/util/CommandHandler.h"
+#include "mframe/util/CommandHandlerDefaultHelp.h"
+#include "mframe/util/Scanner.h"
 
 /* ****************************************************************************
  * Namespace

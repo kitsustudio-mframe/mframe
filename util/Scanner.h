@@ -14,10 +14,10 @@
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-#include "mframe\io\ReadBuffer.h"
-#include "mframe\lang\Data.h"
-#include "mframe\lang\Object.h"
-#include "mframe\util\Iterator.h"
+#include "mframe/io/ReadBuffer.h"
+#include "mframe/lang/Data.h"
+#include "mframe/lang/Object.h"
+#include "mframe/util/Iterator.h"
 
 /* ****************************************************************************
  * Namespace

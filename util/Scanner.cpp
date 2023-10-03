@@ -13,11 +13,11 @@
 #include "Scanner.h"
 
 //-----------------------------------------------------------------------------
-#include "mframe\lang\Character.h"
-#include "mframe\lang\Class.h"
-#include "mframe\lang\Data.h"
-#include "mframe\lang\numb\Booleans.h"
-#include "mframe\lang\numb\Integers.h"
+#include "mframe/lang/Character.h"
+#include "mframe/lang/Class.h"
+#include "mframe/lang/Data.h"
+#include "mframe/lang/numb/Booleans.h"
+#include "mframe/lang/numb/Integers.h"
 /* ****************************************************************************
  * Macro
  */

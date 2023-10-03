@@ -10,10 +10,10 @@
  */
 
 //-----------------------------------------------------------------------------
-#include "mframe\util\ArrayMapPrototype.h"
+#include "mframe/util/ArrayMapPrototype.h"
 
 //-----------------------------------------------------------------------------
-#include "mframe\lang\Class.h"
+#include "mframe/lang/Class.h"
 
 /* ****************************************************************************
  * Namespace

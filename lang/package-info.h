@@ -12,9 +12,9 @@
 /* ****************************************************************************************
  * Include folder
  */
-#include "func\package-info.h"
-#include "numb\package-info.h"
-#include "sys\package-info.h"
+#include "func/package-info.h"
+#include "numb/package-info.h"
+#include "sys/package-info.h"
 
 /* ****************************************************************************************
  * Include

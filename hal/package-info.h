@@ -12,9 +12,9 @@
 /* ****************************************************************************************
  * Include folder
  */
-#include "timer\package-info.h"
-#include "trigger\package-info.h"
-#include "usart\package-info.h"
+#include "timer/package-info.h"
+#include "trigger/package-info.h"
+#include "usart/package-info.h"
 
 /* ****************************************************************************************
  * Include

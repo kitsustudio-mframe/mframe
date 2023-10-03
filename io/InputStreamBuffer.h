@@ -12,8 +12,8 @@
  */
 
 //-----------------------------------------------------------------------------
-#include "mframe\io\Buffer.h"
-#include "mframe\io\InputStream.h"
+#include "mframe/io/Buffer.h"
+#include "mframe/io/InputStream.h"
 
 /* ****************************************************************************
  * Namespace

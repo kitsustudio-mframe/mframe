@@ -14,9 +14,9 @@
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-#include "mframe\lang\Object.h"
-#include "mframe\util\CommandHandler.h"
-#include "mframe\util\Iterator.h"
+#include "mframe/lang/Object.h"
+#include "mframe/util/CommandHandler.h"
+#include "mframe/util/Iterator.h"
 
 /* ****************************************************************************
  * Namespace

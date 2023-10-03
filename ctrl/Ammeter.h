@@ -15,7 +15,7 @@
 
 //-----------------------------------------------------------------------------
 #include "mframe/ctrl/Voltmeter.h"
-#include "mframe\lang\Interface.h"
+#include "mframe/lang/Interface.h"
 
 /* ****************************************************************************
  * Namespace

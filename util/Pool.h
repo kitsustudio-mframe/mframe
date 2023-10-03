@@ -15,10 +15,10 @@
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-#include "mframe\lang\func\Consumer.h"
-#include "mframe\lang\Memory.h"
-#include "mframe\util\Array.h"
-#include "mframe\util\Collection.h"
+#include "mframe/lang/func/Consumer.h"
+#include "mframe/lang/Memory.h"
+#include "mframe/util/Array.h"
+#include "mframe/util/Collection.h"
 
 /* ****************************************************************************
  * Namespace
