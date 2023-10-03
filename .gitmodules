@@ -1,0 +1,24 @@
+[submodule "util"]
+	path = util
+	url = https://github.com/kitsustudio-mframe/util
+[submodule "io"]
+	path = io
+	url = https://github.com/kitsustudio-mframe/io.git
+[submodule "lang"]
+	path = lang
+	url = https://github.com/kitsustudio-mframe/lang.git
+[submodule "hal"]
+	path = hal
+	url = https://github.com/kitsustudio-mframe/hal.git
+[submodule "ctrl"]
+	path = ctrl
+	url = https://github.com/kitsustudio-mframe/ctrl.git
+[submodule "numb"]
+	path = numb
+	url = https://github.com/kitsustudio-mframe/numb.git
+[submodule "func"]
+	path = func
+	url = https://github.com/kitsustudio-mframe/func.git
+[submodule "sys"]
+	path = sys
+	url = https://github.com/kitsustudio-mframe/sys.git
