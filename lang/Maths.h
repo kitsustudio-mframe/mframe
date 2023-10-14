@@ -33,15 +33,9 @@ class mframe::lang::Maths final : public mframe::lang::Object {
    * Variable
    */
 
-
-
-
-
   /* **************************************************************************
    * Abstract Method
    */
-
-
 
   /* **************************************************************************
    * Construct Method
@@ -64,7 +58,27 @@ class mframe::lang::Maths final : public mframe::lang::Object {
    */
 
   /* **************************************************************************
-   * Public Static Method
+   * Public Method <Override>
+   */
+
+  /* **************************************************************************
+   * Public Method
+   */
+
+  /* **************************************************************************
+   * Protected Method
+   */
+
+  /* **************************************************************************
+   * Private Method
+   */
+
+  /* **************************************************************************
+   * Static Variable
+   */
+
+  /* **************************************************************************
+   * Static Method
    */
  public:
   /**
@@ -234,10 +248,6 @@ class mframe::lang::Maths final : public mframe::lang::Object {
    */
   static double fmod(double x, double y);
 
-  /* **************************************************************************
-   * Public Method <Static Inline>
-   */
- public:
   /**
    * @brief Returns the absolute value of an int value. If the argument is not negative,
    *        the argument is returned. If the argument is negative, the negation of the
@@ -375,30 +385,6 @@ class mframe::lang::Maths final : public mframe::lang::Object {
   static inline uint32_t max(uint32_t a, uint32_t b) {
     return ((a) > (b) ? (a) : (b));
   }
-
-  /* **************************************************************************
-   * Public Method <Override>
-   */
-
-  /* **************************************************************************
-   * Public Method
-   */
-
-
-
-
-
-  /* **************************************************************************
-   * Protected Method
-   */
-
-
-
-
-
-  /* **************************************************************************
-   * Private Method
-   */
 };
 
 /* ****************************************************************************

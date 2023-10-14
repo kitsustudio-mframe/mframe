@@ -141,9 +141,7 @@ class mframe::io::RingBuffer : public mframe::lang::Memory,
 
   virtual int put(const void* buffer, int length) override;
 
-  /* **************************************************************************
-   * Public Method <Inline>
-   */
+
  public:
   /**
    * @brief Return size the ring buffer.

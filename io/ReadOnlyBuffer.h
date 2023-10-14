@@ -132,9 +132,7 @@ class mframe::io::ReadOnlyBuffer : public mframe::lang::Data,
 
   virtual int skip(int value) override;
 
-  /* **************************************************************************
-   * Public Method <Inline>
-   */
+
  public:
   /**
    * @brief

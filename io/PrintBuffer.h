@@ -136,9 +136,7 @@ class mframe::io::PrintBuffer final : public mframe::io::RingBuffer {
     return this->print(r);
   }
 
-  /* **************************************************************************
-   * Public Method <Inline>
-   */
+
  public:
   /**
    * @brief

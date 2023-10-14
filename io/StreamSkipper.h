@@ -136,9 +136,7 @@ class mframe::io::StreamSkipper : public mframe::lang::Object,
 
   virtual int put(const void* buffer, int length) override;
 
-  /* **************************************************************************
-   * Public Method <Inline>
-   */
+
  public:
   /**
    * @brief

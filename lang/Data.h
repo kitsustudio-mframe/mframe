@@ -97,9 +97,7 @@ class mframe::lang::Data : public mframe::lang::Pointer {
    */
   virtual int copy(const void* source, int shift, int start, int length) override;
 
-  /* **************************************************************************
-   * Public Method <Inline>
-   */
+
  public:
   /**
    * @brief
