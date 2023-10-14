@@ -589,11 +589,6 @@
           <GroupName>root/hal</GroupName>
           <Files>
             <File>
-              <FileName>package-info.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\hal\package-info.h</FilePath>
-            </File>
-            <File>
               <FileName>AnalogInputPin.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\hal\AnalogInputPin.h</FilePath>
@@ -607,6 +602,21 @@
               <FileName>Base.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\hal\Base.h</FilePath>
+            </File>
+            <File>
+              <FileName>EdgeTrigger.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\EdgeTrigger.h</FilePath>
+            </File>
+            <File>
+              <FileName>EdgeTriggerEventFall.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\EdgeTriggerEventFall.h</FilePath>
+            </File>
+            <File>
+              <FileName>EdgeTriggerEventRise.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\EdgeTriggerEventRise.h</FilePath>
             </File>
             <File>
               <FileName>GeneralInput.h</FileName>
@@ -637,6 +647,41 @@
               <FileName>InterruptEvent.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\hal\InterruptEvent.h</FilePath>
+            </File>
+            <File>
+              <FileName>package-info.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\package-info.h</FilePath>
+            </File>
+            <File>
+              <FileName>Timer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\Timer.h</FilePath>
+            </File>
+            <File>
+              <FileName>TimerEventCancel.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\TimerEventCancel.h</FilePath>
+            </File>
+            <File>
+              <FileName>TimerEventTrigger.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\TimerEventTrigger.h</FilePath>
+            </File>
+            <File>
+              <FileName>Uart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\Uart.h</FilePath>
+            </File>
+            <File>
+              <FileName>UartEventReceiver.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\UartEventReceiver.h</FilePath>
+            </File>
+            <File>
+              <FileName>UartEventTransfer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\UartEventTransfer.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -1930,11 +1975,6 @@
           <GroupName>root/hal</GroupName>
           <Files>
             <File>
-              <FileName>package-info.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\hal\package-info.h</FilePath>
-            </File>
-            <File>
               <FileName>AnalogInputPin.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\hal\AnalogInputPin.h</FilePath>
@@ -1948,6 +1988,21 @@
               <FileName>Base.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\hal\Base.h</FilePath>
+            </File>
+            <File>
+              <FileName>EdgeTrigger.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\EdgeTrigger.h</FilePath>
+            </File>
+            <File>
+              <FileName>EdgeTriggerEventFall.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\EdgeTriggerEventFall.h</FilePath>
+            </File>
+            <File>
+              <FileName>EdgeTriggerEventRise.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\EdgeTriggerEventRise.h</FilePath>
             </File>
             <File>
               <FileName>GeneralInput.h</FileName>
@@ -1978,6 +2033,41 @@
               <FileName>InterruptEvent.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\hal\InterruptEvent.h</FilePath>
+            </File>
+            <File>
+              <FileName>package-info.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\package-info.h</FilePath>
+            </File>
+            <File>
+              <FileName>Timer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\Timer.h</FilePath>
+            </File>
+            <File>
+              <FileName>TimerEventCancel.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\TimerEventCancel.h</FilePath>
+            </File>
+            <File>
+              <FileName>TimerEventTrigger.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\TimerEventTrigger.h</FilePath>
+            </File>
+            <File>
+              <FileName>Uart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\Uart.h</FilePath>
+            </File>
+            <File>
+              <FileName>UartEventReceiver.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\UartEventReceiver.h</FilePath>
+            </File>
+            <File>
+              <FileName>UartEventTransfer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\UartEventTransfer.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -3271,11 +3361,6 @@
           <GroupName>root/hal</GroupName>
           <Files>
             <File>
-              <FileName>package-info.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\hal\package-info.h</FilePath>
-            </File>
-            <File>
               <FileName>AnalogInputPin.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\hal\AnalogInputPin.h</FilePath>
@@ -3289,6 +3374,21 @@
               <FileName>Base.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\hal\Base.h</FilePath>
+            </File>
+            <File>
+              <FileName>EdgeTrigger.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\EdgeTrigger.h</FilePath>
+            </File>
+            <File>
+              <FileName>EdgeTriggerEventFall.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\EdgeTriggerEventFall.h</FilePath>
+            </File>
+            <File>
+              <FileName>EdgeTriggerEventRise.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\EdgeTriggerEventRise.h</FilePath>
             </File>
             <File>
               <FileName>GeneralInput.h</FileName>
@@ -3319,6 +3419,41 @@
               <FileName>InterruptEvent.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\hal\InterruptEvent.h</FilePath>
+            </File>
+            <File>
+              <FileName>package-info.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\package-info.h</FilePath>
+            </File>
+            <File>
+              <FileName>Timer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\Timer.h</FilePath>
+            </File>
+            <File>
+              <FileName>TimerEventCancel.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\TimerEventCancel.h</FilePath>
+            </File>
+            <File>
+              <FileName>TimerEventTrigger.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\TimerEventTrigger.h</FilePath>
+            </File>
+            <File>
+              <FileName>Uart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\Uart.h</FilePath>
+            </File>
+            <File>
+              <FileName>UartEventReceiver.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\UartEventReceiver.h</FilePath>
+            </File>
+            <File>
+              <FileName>UartEventTransfer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hal\UartEventTransfer.h</FilePath>
             </File>
           </Files>
         </Group>
