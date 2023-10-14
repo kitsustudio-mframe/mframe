@@ -14,7 +14,7 @@
 
 //-----------------------------------------------------------------------------
 #include "mframe/lang/System.h"
-#include "mframe/lang/sys/ErrorCode.h"
+#include "mframe/sys/ErrorCode.h"
 
 /* ****************************************************************************
  * Macro
@@ -29,7 +29,7 @@ using mframe::util::CommandHandlerEvent;
 
 //-----------------------------------------------------------------------------
 using mframe::lang::System;
-using mframe::lang::sys::ErrorCode;
+using mframe::sys::ErrorCode;
 
 /* ****************************************************************************
  * Construct Method

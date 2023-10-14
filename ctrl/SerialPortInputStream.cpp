@@ -32,15 +32,15 @@ using mframe::ctrl::SerialPortInputStream;
  */
 
 //-----------------------------------------------------------------------------
-SerialPortInputStream::SerialPortInputStream(mframe::hal::usart::USART& base) : mBase(base) {
-  this->mBase.setEventReceiver(this);
+SerialPortInputStream::SerialPortInputStream(mframe::hal::usart::Uart& base) : mBase(base) {
+  this->mBase.setUartEventReceiver(this);
   return;
 }
 
 //-----------------------------------------------------------------------------
 SerialPortInputStream::~SerialPortInputStream(void) {
   this->mBase.beginReceiver(false);
-  this->mBase.setEventReceiver(nullptr);
+  this->mBase.setUartEventReceiver(nullptr);
   this->abortRead();
   return;
 }

@@ -43,7 +43,7 @@ class mframe::ctrl::SerialPort : public mframe::lang::Object,
 
 
  private:
-  mframe::hal::usart::USART& mBase;
+  mframe::hal::usart::Uart& mBase;
   mframe::ctrl::SerialPortInputStream mSerialPortInputStream;
   mframe::ctrl::SerialPortOutputStream mSerialPortOutputStream;
 
@@ -62,7 +62,7 @@ class mframe::ctrl::SerialPort : public mframe::lang::Object,
    *
    * @param base
    */
-  SerialPort(mframe::hal::usart::USART& base);
+  SerialPort(mframe::hal::usart::Uart& base);
 
   /**
    * @brief Destroy the Serial Port object

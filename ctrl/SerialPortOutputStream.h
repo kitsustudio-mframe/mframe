@@ -14,7 +14,7 @@
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-#include "mframe/hal/usart/USART.h"
+#include "mframe/hal/Uart.h"
 #include "mframe/io/OutputStream.h"
 
 /* ****************************************************************************
@@ -33,7 +33,7 @@ namespace mframe::ctrl {
  *
  */
 class mframe::ctrl::SerialPortOutputStream : public mframe::io::OutputStream,
-                                             public mframe::hal::usart::EventTransfer {
+                                             public mframe::hal::usart::UartEventTransfer {
   /* **************************************************************************
    * Variable
    */
@@ -42,7 +42,7 @@ class mframe::ctrl::SerialPortOutputStream : public mframe::io::OutputStream,
 
 
  private:
-  mframe::hal::usart::USART& mBase;
+  mframe::hal::usart::Uart& mBase;
 
   /* **************************************************************************
    * Abstract Method
@@ -59,7 +59,7 @@ class mframe::ctrl::SerialPortOutputStream : public mframe::io::OutputStream,
    *
    * @param base
    */
-  SerialPortOutputStream(mframe::hal::usart::USART& base);
+  SerialPortOutputStream(mframe::hal::usart::Uart& base);
 
   /**
    * @brief Destroy the Serial Port Output Stream object
@@ -76,7 +76,7 @@ class mframe::ctrl::SerialPortOutputStream : public mframe::io::OutputStream,
    */
 
   /* **************************************************************************
-   * Public Method <Override> - mframe::hal::usart::EventTransfer
+   * Public Method <Override> - mframe::hal::usart::UartEventTransfer
    */
  public:
   virtual bool onUartTransfer(uint8_t& data) override;

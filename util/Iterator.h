@@ -16,7 +16,7 @@
 //-----------------------------------------------------------------------------
 #include "mframe/lang/Iterable.h"
 #include "mframe/lang/Object.h"
-#include "mframe/lang/func/Consumer.h"
+#include "mframe/func/Consumer.h"
 
 /* ****************************************************************************
  * Namespace
@@ -90,7 +90,7 @@ class mframe::util::Iterator : public mframe::lang::Object,
    *
    * @param action
    */
-  virtual void forEachRemaining(mframe::lang::func::Consumer<E&>& action) {
+  virtual void forEachRemaining(mframe::func::Consumer<E&>& action) {
     E e;
     while (this->next(e)) {
       action.accept(e);

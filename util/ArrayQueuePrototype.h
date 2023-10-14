@@ -15,7 +15,7 @@
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-#include "mframe/lang/func/Consumer.h"
+#include "mframe/func/Consumer.h"
 #include "mframe/util/Array.h"
 #include "mframe/util/Collection.h"
 
@@ -134,7 +134,7 @@ class mframe::util::ArrayQueuePrototype : public mframe::util::Array<void*>,
    * @param attachment
    * @param action
    */
-  void foreachPrototype(mframe::lang::func::Consumer<void*>& action) const;
+  void foreachPrototype(mframe::func::Consumer<void*>& action) const;
 
   /* **************************************************************************
    * Private Method

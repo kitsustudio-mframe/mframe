@@ -12,9 +12,9 @@
  */
 
 //-----------------------------------------------------------------------------
-#include "./../hal/GeneralInput.h"
-#include "./../hal/GeneralOutput.h"
-#include "./../hal/GeneralPinMode.h"
+#include "mframe/hal/GeneralInput.h"
+#include "mframe/hal/GeneralOutput.h"
+#include "mframe/hal/GeneralPinMode.h"
 
 /* ****************************************************************************
  * Namespace

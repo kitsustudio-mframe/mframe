@@ -17,7 +17,7 @@
 //-----------------------------------------------------------------------------
 #include "mframe/io/CompletionHandler.h"
 #include "mframe/lang/Object.h"
-#include "mframe/lang/sys/Thread.h"
+#include "mframe/sys/Thread.h"
 
 /* ****************************************************************************
  * Namespace
@@ -47,7 +47,7 @@ class mframe::util::Future : public mframe::lang::Object,
    */
  private:
   Status mStatus;
-  mframe::lang::sys::Thread* mThread;
+  mframe::sys::Thread* mThread;
   int mResult;
 
   /* **************************************************************************

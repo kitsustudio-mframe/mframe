@@ -36,7 +36,7 @@ using mframe::io::OutputStream;
  */
 
 //-----------------------------------------------------------------------------
-SerialPort::SerialPort(mframe::hal::usart::USART& base) : mBase(base),
+SerialPort::SerialPort(mframe::hal::usart::Uart& base) : mBase(base),
                                                           mSerialPortInputStream(base),
                                                           mSerialPortOutputStream(base) {
   return;

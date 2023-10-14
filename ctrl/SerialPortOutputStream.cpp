@@ -34,15 +34,15 @@ using mframe::ctrl::SerialPortOutputStream;
  */
 
 //-----------------------------------------------------------------------------
-SerialPortOutputStream::SerialPortOutputStream(mframe::hal::usart::USART& base) : mBase(base) {
-  this->mBase.setEventTransfer(this);
+SerialPortOutputStream::SerialPortOutputStream(mframe::hal::usart::Uart& base) : mBase(base) {
+  this->mBase.setUartEventTransfer(this);
   return;
 }
 
 //-----------------------------------------------------------------------------
 SerialPortOutputStream::~SerialPortOutputStream(void) {
   this->mBase.beginTransfer(false);
-  this->mBase.setEventTransfer(nullptr);
+  this->mBase.setUartEventTransfer(nullptr);
   this->abortWrite();
   return;
 }
@@ -54,7 +54,7 @@ SerialPortOutputStream::~SerialPortOutputStream(void) {
 
 
 /* ****************************************************************************
- * Public Method <Override> - mframe::hal::usart::EventTransfer
+ * Public Method <Override> - mframe::hal::usart::UartEventTransfer
  */
 
 //-----------------------------------------------------------------------------

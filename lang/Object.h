@@ -22,10 +22,11 @@
  */
 namespace mframe::lang {
   class Object;
-  namespace sys {
-    class Thread;
-  }  // namespace sys
 }  // namespace mframe::lang
+
+namespace mframe::sys {
+  class Thread;
+}  // namespace sys
 
 /* ****************************************************************************
  * Class/struct/Struct
@@ -274,7 +275,7 @@ class mframe::lang::Object : virtual public mframe::lang::Interface {
    * @return null 執行緒取得失敗，可能正在執行中斷事件或是系統並未啟動
    * @return Thread 當前執行緒
    */
-  mframe::lang::sys::Thread* currentThread(void) const;
+  mframe::sys::Thread* currentThread(void) const;
 
   /**
    * @brief 返回對象的哈希碼值。支持這種方法是為了散列表，如HashMap提供的那樣。

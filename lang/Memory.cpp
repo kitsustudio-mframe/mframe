@@ -76,7 +76,7 @@ Memory::~Memory(void) {
 
     while (true) {
       // if (next->mNext == nullptr)
-      // System::error(this, mframe::lang::sys::ErrorCode::NULL_POINTER);
+      // System::error(this, mframe::sys::ErrorCode::NULL_POINTER);
 
       if (next->mNext == this) {
         next->mNext = Memory::mNext;

@@ -12,7 +12,6 @@
 /* ****************************************************************************************
  * Include folder
  */
-#include "virt/package-info.h"
 
 /* ****************************************************************************************
  * Include
@@ -22,6 +21,9 @@
 #include "SerialPortInputStream.h"
 #include "SerialPortOutputStream.h"
 #include "TemperatureSensor.h"
+#include "VirtualAnalogInputPin.h"
+#include "VirtualGeneralPin.h"
+#include "VirtualTemperatureSensor.h"
 #include "Voltmeter.h"
 
 /* ****************************************************************************************

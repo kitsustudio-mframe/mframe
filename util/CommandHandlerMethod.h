@@ -28,7 +28,7 @@ namespace mframe::util {
  * Class/Interface/Struct/Enum
  */
 template <class C>
-class mframe::util::CommandHandlerMethod : public mframe::lang::func::FunctionMethod<C, CommandExecutor&, bool>,
+class mframe::util::CommandHandlerMethod : public mframe::func::FunctionMethod<C, CommandExecutor&, bool>,
                                            public mframe::util::CommandHandler {
   /* **************************************************************************
    * Variable
@@ -56,7 +56,7 @@ class mframe::util::CommandHandlerMethod : public mframe::lang::func::FunctionMe
   CommandHandlerMethod(C& c,
                        bool (C::*method)(CommandExecutor&),
                        const char* command,
-                       const char* description) : mframe::lang::func::FunctionMethod<C, CommandExecutor&, bool>(c, method) {
+                       const char* description) : mframe::func::FunctionMethod<C, CommandExecutor&, bool>(c, method) {
     this->mDescription = description;
     this->mCommand = command;
     return;

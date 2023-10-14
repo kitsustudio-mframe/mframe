@@ -14,7 +14,7 @@
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-#include "./../hal/usart/USART.h"
+#include "mframe/hal/Uart.h"
 #include "mframe/io/InputStream.h"
 
 /* ****************************************************************************
@@ -33,7 +33,7 @@ namespace mframe::ctrl {
  *
  */
 class mframe::ctrl::SerialPortInputStream : public mframe::io::InputStream,
-                                            public mframe::hal::usart::EventReceiver {
+                                            public mframe::hal::usart::UartEventReceiver {
   /* **************************************************************************
    * Variable
    */
@@ -42,7 +42,7 @@ class mframe::ctrl::SerialPortInputStream : public mframe::io::InputStream,
 
 
  private:
-  mframe::hal::usart::USART& mBase;
+  mframe::hal::usart::Uart& mBase;
 
   /* **************************************************************************
    * Abstract Method
@@ -59,7 +59,7 @@ class mframe::ctrl::SerialPortInputStream : public mframe::io::InputStream,
    *
    * @param base
    */
-  SerialPortInputStream(mframe::hal::usart::USART& base);
+  SerialPortInputStream(mframe::hal::usart::Uart& base);
 
   /**
    * @brief Destroy the Serial Port Input Stream object
@@ -76,7 +76,7 @@ class mframe::ctrl::SerialPortInputStream : public mframe::io::InputStream,
    */
 
   /* **************************************************************************
-   * Public Method <Override> - mframe::hal::usart::EventReceiver
+   * Public Method <Override> - mframe::hal::usart::UartEventReceiver
    */
  public:
   virtual bool onUartReceiver(const uint8_t data) override;

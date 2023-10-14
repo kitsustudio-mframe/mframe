@@ -15,7 +15,7 @@
 
 //-----------------------------------------------------------------------------
 #include "mframe/io/ReadOnlyBuffer.h"
-#include "mframe/lang/numb/Integer.h"
+#include "mframe/numb/Integer.h"
 
 /* ****************************************************************************
  * Macro
@@ -31,7 +31,7 @@
 using mframe::lang::Character;
 
 //-----------------------------------------------------------------------------
-using mframe::lang::numb::Integer;
+using mframe::numb::Integer;
 
 /* ****************************************************************************
  * Construct Method

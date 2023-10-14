@@ -18,7 +18,7 @@
 #include "mframe/lang/Class.h"
 #include "mframe/lang/Memory.h"
 #include "mframe/lang/Pointers.h"
-#include "mframe/lang/numb/Integers.h"
+#include "mframe/numb/Integers.h"
 /* ****************************************************************************
  * Macro
  */
@@ -40,7 +40,7 @@ using mframe::io::WriteBuffer;
 using mframe::lang::Class;
 using mframe::lang::Memory;
 using mframe::lang::Pointers;
-using mframe::lang::numb::Integers;
+using mframe::numb::Integers;
 
 /* ****************************************************************************
  * Construct Method

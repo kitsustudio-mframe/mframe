@@ -15,19 +15,13 @@
 
 //-----------------------------------------------------------------------------
 #include "mframe/io/PrintBuffer.h"
-#include "mframe/lang/sys/ErrorCode.h"
-#include "mframe/lang/sys/Kernel.h"
-#include "mframe/lang/sys/Svchost.h"
+#include "mframe/sys/ErrorCode.h"
+#include "mframe/sys/Kernel.h"
+#include "mframe/sys/Svchost.h"
 
 /* ****************************************************************************
  * Namespace
  */
-namespace mframe::lang {
-  static mframe::lang::sys::Kernel* mKernel = nullptr;
-  static mframe::lang::sys::HardwareInfo* mHardwareInfo = nullptr;
-  static mframe::lang::sys::Allocator* mAllocator = nullptr;
-  static mframe::lang::sys::Svchost* mSvchost = nullptr;
-}  // namespace mframe::lang
 
 /* ****************************************************************************
  * Extern
@@ -40,17 +34,21 @@ using mframe::lang::System;
 
 //-----------------------------------------------------------------------------
 using mframe::io::PrintBuffer;
-using mframe::lang::sys::ErrorCode;
-using mframe::lang::sys::Kernel;
-using mframe::lang::sys::Svchost;
-
+using mframe::lang::Data;
+using mframe::func::Runnable;
+using mframe::sys::Allocator;
+using mframe::sys::ErrorCode;
+using mframe::sys::HardwareInfo;
+using mframe::sys::Kernel;
+using mframe::sys::Svchost;
+using mframe::sys::Thread;
 /* ****************************************************************************
  * Global Operator
  */
 //-----------------------------------------------------------------------------
 void* operator new(size_t n) {
-  if (mframe::lang::mAllocator)
-    return mframe::lang::mAllocator->allocAlignment64(static_cast<int>(n));
+  if (System::mAllocator)
+    return System::mAllocator->allocAlignment64(static_cast<int>(n));
 
   else
     return malloc(n);
@@ -58,8 +56,8 @@ void* operator new(size_t n) {
 
 //-----------------------------------------------------------------------------
 void* operator new[](size_t n) {
-  if (mframe::lang::mAllocator)
-    return mframe::lang::mAllocator->allocAlignment64(static_cast<int>(n));
+  if (System::mAllocator)
+    return System::mAllocator->allocAlignment64(static_cast<int>(n));
 
   else
     return malloc(n);
@@ -67,8 +65,8 @@ void* operator new[](size_t n) {
 
 //-----------------------------------------------------------------------------
 void operator delete(void* p) {
-  if (mframe::lang::mAllocator)
-    mframe::lang::mAllocator->free(p);
+  if (System::mAllocator)
+    System::mAllocator->free(p);
 
   else
     free(p);
@@ -96,6 +94,33 @@ System::~System(void) {
  * Operator Method
  */
 
+/* ****************************************************************************
+ * Public Method <Override>
+ */
+
+/* ****************************************************************************
+ * Public Method
+ */
+
+/* ****************************************************************************
+ * Protected Method
+ */
+
+/* ****************************************************************************
+ * Private Method
+ */
+
+/* ****************************************************************************
+ * Static Variable
+ */
+mframe::sys::Allocator* System::mAllocator = nullptr;
+mframe::sys::Kernel* System::mKernel = nullptr;
+mframe::sys::HardwareInfo* System::mHardwareInfo = nullptr;
+Svchost* System::mSvchost = nullptr;
+
+/* ****************************************************************************
+ * Static Method
+ */
 //-----------------------------------------------------------------------------
 PrintBuffer& System::out(void) {
   return mSvchost->mPrintBuffer;
@@ -108,30 +133,26 @@ mframe::io::ReadBuffer& System::in(void) {
 
 //-----------------------------------------------------------------------------
 void System::reboot(void) {
-  mKernel->reboot();
+  System::mKernel->reboot();
   return;
 }
 
 //-----------------------------------------------------------------------------
-void System::setup(mframe::lang::sys::SystemConfig& systemConfig) {
+void System::setup(mframe::sys::SystemConfig& systemConfig) {
   if (mSvchost)
     return;
 
-  mKernel = systemConfig.system.kernel;
-  mAllocator = systemConfig.system.allocator;
-  mHardwareInfo = systemConfig.system.hardwareInfo;
-
-  if (mKernel->initialize() == false)
-    System::error("SYSTEM", mframe::lang::sys::ErrorCode::SYSTEM_ERROR);
+  if (System::mKernel->initialize() == false)
+    System::error("SYSTEM", mframe::sys::ErrorCode::SYSTEM_ERROR);
 
   mSvchost = new Svchost(systemConfig);
   return;
 }
 
 //-----------------------------------------------------------------------------
-void System::start(mframe::lang::func::Runnable& task, int stackSize) {
+void System::start(Runnable& task, int stackSize) {
   if (mSvchost->start(task, stackSize))
-    mKernel->start();
+    System::mKernel->start();
 
   return;
 }
@@ -159,15 +180,15 @@ void System::throwError(const char* message, const char* path, ErrorCode code) {
 
 //-----------------------------------------------------------------------------
 int System::getCoreClock(void) {
-  if (mHardwareInfo)
-    return mHardwareInfo->systemClock();
+  if (System::mHardwareInfo)
+    return System::mHardwareInfo->systemClock();
 
   else
     return -1;
 }
 
 //-----------------------------------------------------------------------------
-void System::execute(mframe::lang::func::Runnable& runnable) {
+void System::execute(Runnable& runnable) {
   if (mSvchost->execute(runnable))
     return;
 
@@ -176,21 +197,21 @@ void System::execute(mframe::lang::func::Runnable& runnable) {
 }
 
 //-----------------------------------------------------------------------------
-mframe::lang::sys::Thread& System::allocThread(mframe::lang::func::Runnable& runnable, int stackSize) {
-  mframe::lang::sys::Thread* result = mKernel->allocThread(runnable, stackSize);
+Thread& System::allocThread(Runnable& runnable, int stackSize) {
+  Thread* result = System::mKernel->allocThread(runnable, stackSize);
 
   if (result == nullptr)
-    System::error("SYSTEM", mframe::lang::sys::ErrorCode::SYSTEM_ERROR);
+    System::error("SYSTEM", ErrorCode::SYSTEM_ERROR);
 
   return *result;
 }
 
 //-----------------------------------------------------------------------------
-mframe::lang::sys::Thread& System::allocThread(mframe::lang::func::Runnable& runnable, mframe::lang::Data& stackMemory) {
-  mframe::lang::sys::Thread* result = mKernel->allocThread(runnable, stackMemory);
+Thread& System::allocThread(Runnable& runnable, Data& stackMemory) {
+  Thread* result = System::mKernel->allocThread(runnable, stackMemory);
 
   if (result == nullptr)
-    System::error("SYSTEM", mframe::lang::sys::ErrorCode::SYSTEM_ERROR);
+    System::error("SYSTEM", ErrorCode::SYSTEM_ERROR);
 
   return *result;
 }
@@ -225,7 +246,7 @@ bool System::yield(void) {
 }
 
 //-----------------------------------------------------------------------------
-mframe::lang::sys::Thread* System::currentThread(void) {
+Thread* System::currentThread(void) {
   return mKernel->getCurrentThread();
 }
 
@@ -238,40 +259,6 @@ int System::lock(void) {
 int System::unlock(void) {
   return mKernel->systemUnlock();
 }
-
-//-----------------------------------------------------------------------------
-mframe::lang::sys::Allocator* System::getAllocator(void) {
-  return mAllocator;
-}
-
-//-----------------------------------------------------------------------------
-mframe::lang::sys::SystemControl& System::getControl(void) {
-  return *mSvchost;
-}
-
-/* ****************************************************************************
- * Public Method <Override>
- */
-
-/* ****************************************************************************
- * Public Method
- */
-
-/* ****************************************************************************
- * Protected Method
- */
-
-/* ****************************************************************************
- * Private Method
- */
-
-/* ****************************************************************************
- * Static Variable
- */
-
-/* ****************************************************************************
- * Static Method
- */
 
 /* ****************************************************************************
  * End of file

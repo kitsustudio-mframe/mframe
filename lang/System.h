@@ -17,13 +17,13 @@
 //-----------------------------------------------------------------------------
 #include "mframe/io/PrintBuffer.h"
 #include "mframe/io/RingBuffer.h"
-#include "mframe/lang/func/Runnable.h"
-#include "mframe/lang/sys/ErrorCode.h"
-#include "mframe/lang/sys/Kernel.h"
-#include "mframe/lang/sys/Svchost.h"
-#include "mframe/lang/sys/SystemConfig.h"
-#include "mframe/lang/sys/SystemControl.h"
-#include "mframe/lang/sys/Thread.h"
+#include "mframe/func/Runnable.h"
+#include "mframe/sys/ErrorCode.h"
+#include "mframe/sys/Kernel.h"
+#include "mframe/sys/Svchost.h"
+#include "mframe/sys/SystemConfig.h"
+#include "mframe/sys/SystemControl.h"
+#include "mframe/sys/Thread.h"
 
 /* ****************************************************************************
  * Macro
@@ -74,7 +74,7 @@ class mframe::lang::System final : public mframe::lang::Object {
   /* **************************************************************************
    * Operator Method
    */
-  
+
   /* **************************************************************************
    * Public Method <Override>
    */
@@ -94,6 +94,11 @@ class mframe::lang::System final : public mframe::lang::Object {
   /* **************************************************************************
    * Static Variable
    */
+ public:
+  static mframe::sys::Svchost* mSvchost;
+  static mframe::sys::Allocator* mAllocator;
+  static mframe::sys::Kernel* mKernel;
+  static mframe::sys::HardwareInfo* mHardwareInfo;
 
   /* **************************************************************************
    * Static Method
@@ -124,14 +129,14 @@ class mframe::lang::System final : public mframe::lang::Object {
    *
    * @param systemConfig
    */
-  static void setup(mframe::lang::sys::SystemConfig& systemConfig);
+  static void setup(mframe::sys::SystemConfig& systemConfig);
 
   /**
    * @brief 系統初始化核心
    *
    * @param kernel 核心方法，建議使用CMSIS-RTOS2
    */
-  static void start(mframe::lang::func::Runnable& task, int stackSize);
+  static void start(mframe::func::Runnable& task, int stackSize);
 
   /**
    * @brief 錯誤拋出
@@ -139,7 +144,7 @@ class mframe::lang::System final : public mframe::lang::Object {
    * @param address
    * @param code
    */
-  static void error(const void* address, mframe::lang::sys::ErrorCode code);
+  static void error(const void* address, mframe::sys::ErrorCode code);
 
   /**
    * @brief 拋出錯誤
@@ -148,7 +153,7 @@ class mframe::lang::System final : public mframe::lang::Object {
    * @param path 方法路徑
    * @param code 異常碼
    */
-  static void throwError(const char* message, const char* path, mframe::lang::sys::ErrorCode code);
+  static void throwError(const char* message, const char* path, mframe::sys::ErrorCode code);
 
   /**
    * @brief Get the Core Clock object
@@ -300,7 +305,7 @@ class mframe::lang::System final : public mframe::lang::Object {
    * @return null 執行緒取得失敗，可能正在執行中斷事件或是系統並未啟動
    * @return Thread 當前執行緒
    */
-  static mframe::lang::sys::Thread* currentThread(void);
+  static mframe::sys::Thread* currentThread(void);
 
   /**
    * @brief
@@ -309,39 +314,39 @@ class mframe::lang::System final : public mframe::lang::Object {
    * @return true
    * @return false
    */
-  static void execute(mframe::lang::func::Runnable& runnable);
+  static void execute(mframe::func::Runnable& runnable);
 
   /**
    * @brief
    *
    * @param runnable
    * @param stackSize
-   * @return mframe::lang::sys::Thread&
+   * @return mframe::sys::Thread&
    */
-  static mframe::lang::sys::Thread& allocThread(mframe::lang::func::Runnable& runnable, int stackSize);
+  static mframe::sys::Thread& allocThread(mframe::func::Runnable& runnable, int stackSize);
 
   /**
    * @brief
    *
    * @param runnable
    * @param stackMemory
-   * @return mframe::lang::sys::Thread&
+   * @return mframe::sys::Thread&
    */
-  static mframe::lang::sys::Thread& allocThread(mframe::lang::func::Runnable& runnable, mframe::lang::Data& stackMemory);
+  static mframe::sys::Thread& allocThread(mframe::func::Runnable& runnable, mframe::lang::Data& stackMemory);
 
   /**
    * @brief Get the Allocator object
    *
-   * @return mframe::lang::sys::Allocator&
+   * @return mframe::sys::Allocator&
    */
-  static mframe::lang::sys::Allocator* getAllocator(void);
+  static mframe::sys::Allocator* getAllocator(void);
 
   /**
    * @brief 取得系統層控制項目。
    *
-   * @return mframe::lang::sys::SystemControl& 控制項
+   * @return mframe::sys::SystemControl& 控制項
    */
-  static mframe::lang::sys::SystemControl& getControl(void);
+  static mframe::sys::SystemControl& getControl(void);
 };
 
 /* ****************************************************************************

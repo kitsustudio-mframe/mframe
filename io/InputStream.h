@@ -40,7 +40,7 @@ namespace mframe::io {
  *
  */
 class mframe::io::InputStream : public mframe::lang::Object,
-                                public mframe::lang::func::Runnable {
+                                public mframe::func::Runnable {
   /* **************************************************************************
    * Variable
    */
@@ -77,7 +77,7 @@ class mframe::io::InputStream : public mframe::lang::Object,
    */
 
   /* **************************************************************************
-   * Public Method <Override> - mframe::lang::func::Runnable
+   * Public Method <Override> - mframe::func::Runnable
    */
  public:
   virtual void run(void) override;

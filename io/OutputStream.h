@@ -16,7 +16,7 @@
 //-----------------------------------------------------------------------------
 #include "mframe/io/CompletionHandler.h"
 #include "mframe/io/ReadBuffer.h"
-#include "mframe/lang/func/Function.h"
+#include "mframe/func/Function.h"
 #include "mframe/util/Future.h"
 
 /* ****************************************************************************
@@ -37,7 +37,7 @@ namespace mframe::io {
  *
  */
 class mframe::io::OutputStream : public mframe::lang::Object,
-                                 public mframe::lang::func::Runnable {
+                                 public mframe::func::Runnable {
   /* **************************************************************************
    * Variable
    */
@@ -74,7 +74,7 @@ class mframe::io::OutputStream : public mframe::lang::Object,
    */
 
   /* **************************************************************************
-   * Public Method <Override> - mframe::lang::func::Runnable
+   * Public Method <Override> - mframe::func::Runnable
    */
  public:
   virtual void run(void) override;

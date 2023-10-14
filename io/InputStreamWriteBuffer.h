@@ -15,7 +15,7 @@
 
 //-----------------------------------------------------------------------------
 #include "mframe/io/InputStream.h"
-#include "mframe/lang/func/Runnable.h"
+#include "mframe/func/Runnable.h"
 
 /* ****************************************************************************
  * Namespace

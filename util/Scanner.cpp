@@ -16,8 +16,8 @@
 #include "mframe/lang/Character.h"
 #include "mframe/lang/Class.h"
 #include "mframe/lang/Data.h"
-#include "mframe/lang/numb/Booleans.h"
-#include "mframe/lang/numb/Integers.h"
+#include "mframe/numb/Booleans.h"
+#include "mframe/numb/Integers.h"
 /* ****************************************************************************
  * Macro
  */
@@ -33,8 +33,8 @@ using mframe::util::Scanner;
 using mframe::lang::Character;
 using mframe::lang::Class;
 using mframe::lang::Data;
-using mframe::lang::numb::Booleans;
-using mframe::lang::numb::Integers;
+using mframe::numb::Booleans;
+using mframe::numb::Integers;
 
 /* ****************************************************************************
  * Construct Method

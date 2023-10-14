@@ -14,7 +14,7 @@
 
 //-----------------------------------------------------------------------------
 #include "mframe/lang/System.h"
-#include "mframe/lang/sys/ErrorCode.h"
+#include "mframe/sys/ErrorCode.h"
 
 /* ****************************************************************************
  * Using
@@ -25,7 +25,7 @@ using mframe::lang::Object;
 
 //-----------------------------------------------------------------------------
 using mframe::lang::System;
-using mframe::lang::sys::ErrorCode;
+using mframe::sys::ErrorCode;
 
 /* ****************************************************************************
  * Construct Method
@@ -120,7 +120,7 @@ int Object::hashcode(void) const {
 }
 
 //-----------------------------------------------------------------------------
-mframe::lang::sys::Thread* Object::currentThread(void) const {
+mframe::sys::Thread* Object::currentThread(void) const {
   return System::currentThread();
 }
 

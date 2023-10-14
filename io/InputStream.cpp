@@ -60,7 +60,7 @@ InputStream::~InputStream(void) {
  */
 
 /* ****************************************************************************
- * Public Method <Override> - mframe::lang::func::Runnable
+ * Public Method <Override> - mframe::func::Runnable
  */
 
 //-----------------------------------------------------------------------------
