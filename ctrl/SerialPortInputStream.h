@@ -38,17 +38,12 @@ class mframe::ctrl::SerialPortInputStream : public mframe::io::InputStream,
    * Variable
    */
 
-
-
-
  private:
   mframe::hal::usart::Uart& mBase;
 
   /* **************************************************************************
    * Abstract Method
    */
-
-
 
   /* **************************************************************************
    * Construct Method
@@ -72,10 +67,6 @@ class mframe::ctrl::SerialPortInputStream : public mframe::io::InputStream,
    */
 
   /* **************************************************************************
-   * Public Static Method
-   */
-
-  /* **************************************************************************
    * Public Method <Override> - mframe::hal::usart::UartEventReceiver
    */
  public:
@@ -84,8 +75,6 @@ class mframe::ctrl::SerialPortInputStream : public mframe::io::InputStream,
   /* **************************************************************************
    * Public Method
    */
-
-
 
   /* **************************************************************************
    * Protected Method <Override> - mframe::lang::InputStream
@@ -97,12 +86,16 @@ class mframe::ctrl::SerialPortInputStream : public mframe::io::InputStream,
    * Protected Method
    */
 
-
-
-
-
   /* **************************************************************************
    * Private Method
+   */
+
+  /* **************************************************************************
+   * Static Variable
+   */
+
+  /* **************************************************************************
+   * Static Method
    */
 };
 

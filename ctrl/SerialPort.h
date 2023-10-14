@@ -39,9 +39,6 @@ class mframe::ctrl::SerialPort : public mframe::lang::Object,
    * Variable
    */
 
-
-
-
  private:
   mframe::hal::usart::Uart& mBase;
   mframe::ctrl::SerialPortInputStream mSerialPortInputStream;
@@ -50,8 +47,6 @@ class mframe::ctrl::SerialPort : public mframe::lang::Object,
   /* **************************************************************************
    * Abstract Method
    */
-
-
 
   /* **************************************************************************
    * Construct Method
@@ -72,10 +67,6 @@ class mframe::ctrl::SerialPort : public mframe::lang::Object,
 
   /* **************************************************************************
    * Operator Method
-   */
-
-  /* **************************************************************************
-   * Public Static Method
    */
 
   /* **************************************************************************
@@ -127,18 +118,20 @@ class mframe::ctrl::SerialPort : public mframe::lang::Object,
    */
   virtual mframe::io::InputStream& getInputStream(void);
 
-
-
   /* **************************************************************************
    * Protected Method
    */
 
-
-
-
-
   /* **************************************************************************
    * Private Method
+   */
+
+  /* **************************************************************************
+   * Static Variable
+   */
+
+  /* **************************************************************************
+   * Static Method
    */
 };
 

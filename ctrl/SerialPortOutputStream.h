@@ -38,17 +38,12 @@ class mframe::ctrl::SerialPortOutputStream : public mframe::io::OutputStream,
    * Variable
    */
 
-
-
-
  private:
   mframe::hal::usart::Uart& mBase;
 
   /* **************************************************************************
    * Abstract Method
    */
-
-
 
   /* **************************************************************************
    * Construct Method
@@ -72,10 +67,6 @@ class mframe::ctrl::SerialPortOutputStream : public mframe::io::OutputStream,
    */
 
   /* **************************************************************************
-   * Public Static Method
-   */
-
-  /* **************************************************************************
    * Public Method <Override> - mframe::hal::usart::UartEventTransfer
    */
  public:
@@ -85,22 +76,22 @@ class mframe::ctrl::SerialPortOutputStream : public mframe::io::OutputStream,
    * Public Method
    */
 
-
-
-
+  /* **************************************************************************
+   * Protected Method
+   */
  protected:
   virtual void onWriteEvent(void) override;
 
   /* **************************************************************************
-   * Protected Method
+   * Private Method
    */
 
-
-
-
+  /* **************************************************************************
+   * Static Variable
+   */
 
   /* **************************************************************************
-   * Private Method
+   * Static Method
    */
 };
 

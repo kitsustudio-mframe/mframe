@@ -67,10 +67,6 @@ class mframe::ctrl::VirtualGeneralPin : public mframe::lang::Object,
    */
 
   /* **************************************************************************
-   * Public Static Method
-   */
-
-  /* **************************************************************************
    * Public Method <Override>
    */
  public:

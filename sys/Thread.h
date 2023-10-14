@@ -60,10 +60,6 @@ class mframe::sys::Thread : public mframe::lang::Object {
    */
 
   /* **************************************************************************
-   * Public Static Method
-   */
-
-  /* **************************************************************************
    * Public Method <Abstract>
    */
  public:

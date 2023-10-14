@@ -33,7 +33,7 @@ namespace mframe::ctrl {
  *
  */
 class mframe::ctrl::VirtualAnalogInputPin : public mframe::lang::Object,
-                                                  public mframe::hal::AnalogInputPin {
+                                            public mframe::hal::AnalogInputPin {
   /* **************************************************************************
    * Variable
    */
@@ -64,10 +64,6 @@ class mframe::ctrl::VirtualAnalogInputPin : public mframe::lang::Object,
 
   /* **************************************************************************
    * Operator Method
-   */
-
-  /* **************************************************************************
-   * Public Static Method
    */
 
   /* **************************************************************************

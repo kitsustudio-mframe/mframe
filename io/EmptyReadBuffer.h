@@ -58,10 +58,6 @@ class mframe::io::EmptyReadBuffer : public mframe::lang::Object,
    */
 
   /* **************************************************************************
-   * Public Static Method
-   */
-
-  /* **************************************************************************
    * Public Method <Override> - mframe::lang::Iterable<char>
    */
  public:
