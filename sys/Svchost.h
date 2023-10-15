@@ -14,12 +14,12 @@
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
+#include "mframe/func/Runnable.h"
 #include "mframe/io/InputStream.h"
 #include "mframe/io/PrintBuffer.h"
 #include "mframe/io/RingBuffer.h"
 #include "mframe/lang/Data.h"
 #include "mframe/lang/Object.h"
-#include "mframe/func/Runnable.h"
 #include "mframe/sys/Allocator.h"
 #include "mframe/sys/Kernel.h"
 #include "mframe/sys/SystemConfig.h"
@@ -39,9 +39,9 @@ namespace mframe::sys {
  * Class/struct/Struct/Enum
  */
 class mframe::sys::Svchost : public mframe::lang::Object,
-                                   public mframe::func::Runnable,
-                                   public mframe::io::CompletionHandler<int, void*>,
-                                   public mframe::sys::SystemControl {
+                             public mframe::func::Runnable,
+                             public mframe::io::CompletionHandler<int, void*>,
+                             public mframe::sys::SystemControl {
   /* **************************************************************************
    * Variable
    */
