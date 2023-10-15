@@ -65,12 +65,12 @@ const char* CommandHandlerDefaultHelp::getCommand(void) {
 //-----------------------------------------------------------------------------
 bool CommandHandlerDefaultHelp::onCommand(CommandExecutor& executor) {
   executor.in().skipNextLine();
-  executor.out() << "Help list:\n";
+  executor.out() << "Help list:\r\n";
   this->mCommandIterator.reset();
 
   CommandHandler* c = nullptr;
   while (this->mCommandIterator.next(c)) {
-    executor.out() << "  " << c->getCommand() << " - " << c->getDescription() << "\n";
+    executor.out() << "  " << c->getCommand() << " - " << c->getDescription() << "\r\n";
   }
 
   return true;

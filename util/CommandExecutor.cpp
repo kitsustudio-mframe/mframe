@@ -83,7 +83,7 @@ void CommandExecutor::execute(void) {
 
     this->mInput.nextString(this->mBuffer);
     if (this->mBuffer.isEmpty()) {
-      this->mOutput << '\n'
+      this->mOutput << "\r\n"
                     << this->mHostname << "> ";
       return;
     }
@@ -91,13 +91,13 @@ void CommandExecutor::execute(void) {
     Hashcode h = Hashcode(HashGenerator::getHashcodeLowerCast(this->mBuffer));
     this->mCommandHandler = this->mCommandMap.get(h);
     if (this->mCommandHandler) {
-      this->out() << '\n';
+      this->out() << "\r\n";
       result = this->mCommandHandler->onCommand(*this);
     }
 
     else {
       result = false;
-      this->out() << "\n\'";
+      this->out() << "\r\n\'";
       this->out() << this->mBuffer;
       this->out() << "\' ";
       this->out() << CommandExecutor::TEXT_UNKNOWN_COMMAND;
@@ -115,7 +115,7 @@ void CommandExecutor::execute(void) {
       this->mOutput << Character::CHAR_NAK;
   }
 
-  this->mOutput << '\n'
+  this->mOutput << "\r\n"
                 << this->mHostname << "> ";
   return;
 }

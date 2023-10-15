@@ -71,7 +71,7 @@ PrintBuffer& PrintBuffer::print(bool b, bool newLine) {
     this->put("False", 5);
 
   if (newLine)
-    this->putByte('\n');
+    this->println();
 
   return *this;
 }
@@ -81,7 +81,7 @@ PrintBuffer& PrintBuffer::print(char c, bool newLine) {
   this->putByte(c);
 
   if (newLine)
-    this->putByte('\n');
+    this->println();
 
   return *this;
 }
@@ -91,7 +91,7 @@ PrintBuffer& PrintBuffer::print(double d, bool newLine) {
   mframe::lang::StringFormat::writeBuffer(*this, "%f", d);
 
   if (newLine)
-    this->putByte('\n');
+    this->println();
 
   return *this;
 }
@@ -101,7 +101,7 @@ PrintBuffer& PrintBuffer::print(float f, bool newLine) {
   mframe::lang::StringFormat::writeBuffer(*this, "%f", static_cast<double>(f));
 
   if (newLine)
-    this->putByte('\n');
+    this->println();
 
   return *this;
 }
@@ -115,7 +115,7 @@ PrintBuffer& PrintBuffer::print(int i, bool newLine, bool unsign) {
     mframe::lang::StringFormat::writeBuffer(*this, "%d", i);
 
   if (newLine)
-    this->putByte('\n');
+    this->println();
 
   return *this;
 }
@@ -125,7 +125,7 @@ PrintBuffer& PrintBuffer::print(const Strings& string, bool newLine) {
   this->put(string, string.size());
 
   if (newLine)
-    this->putByte('\n');
+    this->println();
 
   return *this;
 }
@@ -135,7 +135,7 @@ PrintBuffer& PrintBuffer::print(const char* string, bool newLine) {
   this->put(string, Strings::getLength(string));
 
   if (newLine)
-    this->putByte('\n');
+    this->println();
 
   return *this;
 }
@@ -145,13 +145,14 @@ PrintBuffer& PrintBuffer::print(ReadBuffer& readBuffer, bool newLine) {
   this->put(readBuffer);
 
   if (newLine)
-    this->putByte('\n');
+    this->println();
 
   return *this;
 }
 
 //-----------------------------------------------------------------------------
 PrintBuffer& PrintBuffer::println(void) {
+  this->putByte('\r');
   this->putByte('\n');
 
   return *this;
