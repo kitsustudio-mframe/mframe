@@ -20,6 +20,8 @@
 #include "Booleans.h"
 #include "Byte.h"
 #include "Bytes.h"
+#include "Float.h"
+#include "Floats.h"
 #include "Integer.h"
 #include "Integers.h"
 #include "Number.h"

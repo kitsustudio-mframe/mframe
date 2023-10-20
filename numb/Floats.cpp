@@ -11,7 +11,7 @@
 #include <stdlib.h>
 
 //-----------------------------------------------------------------------------
-#include "Integers.h"
+#include "Floats.h"
 
 //-----------------------------------------------------------------------------
 #include "mframe/lang/Character.h"
@@ -27,11 +27,10 @@
  */
 
 //-----------------------------------------------------------------------------
-using mframe::numb::Integers;
+using mframe::numb::Floats;
 
 //-----------------------------------------------------------------------------
 using mframe::lang::Character;
-using mframe::util::Iterator;
 
 /* ****************************************************************************
  * Abstract Method
@@ -64,68 +63,66 @@ using mframe::util::Iterator;
 /* ****************************************************************************
  * Static Variable
  */
-const char* Integers::TEXT_MAX_VALUE = "2147483647";
-const char* Integers::TEXT_MIN_VALUE = "-2147483648";
-const int Integers::MAX_ASCII_VALUE = static_cast<int>(sizeof("-2147483648"));
+const int Floats::MAX_ASCII_VALUE = 40;
+const float Floats::MAX_VALUE = 3.40282E+038f;
+const float Floats::MIN_VALUE = 1.17549E-038f;
 
 /* ****************************************************************************
  * Static Method
  */
 //-----------------------------------------------------------------------------
-bool Integers::isInteger(mframe::util::Iterator<char>& iterator) {
-  char cache[Integers::MAX_ASCII_VALUE];
-  for (int i = 0; i < Integers::MAX_ASCII_VALUE; ++i) {
+bool Floats::isFloat(mframe::util::Iterator<char>& iterator) {
+  char cache[Floats::MAX_ASCII_VALUE];
+  for (int i = 0; i < Floats::MAX_ASCII_VALUE; ++i) {
     if (!iterator.next(cache[i]))
       break;
   }
 
-  return Integers::isInteger(cache);
+  return Floats::isFloat(cache);
 }
 
 //-----------------------------------------------------------------------------
-bool Integers::isInteger(const char* str) {
+bool Floats::isFloat(const char* str) {
   if (str == nullptr)
     return false;
 
-  int i = 1;
-
-  if (str[0] == '0' && (str[1] == 'x' || str[1] == 'X'))
-    i = 2;
-
-  else if ((str[0] == '-') && MACRO_IS_NUMB(str[1]))
-    i = 1;
-
-  else if (MACRO_IS_NUMB(str[0]))
-    i = 1;
-
-  else
+  if (!(MACRO_IS_NUMB(str[0]) || (str[0] == '-')))
     return false;
 
-  for (; i < Integers::MAX_ASCII_VALUE; ++i) {
-    if (!MACRO_IS_NUMB(str[i]))
+  int i = 1;
+  int point = 0;
+
+  for (; i < Floats::MAX_ASCII_VALUE; ++i) {
+    if (str[i] == '.')
+      ++point;
+
+    else if (!MACRO_IS_NUMB(str[i]))
       break;
   }
 
+  if(point > 1)
+    return false;
+    
   return Character::isNextSymbol(str[i]);
 }
 
 //-----------------------------------------------------------------------------
-bool Integers::parseInteger(int& result, mframe::util::Iterator<char>& iterator) {
-  char cache[Integers::MAX_ASCII_VALUE];
-  for (int i = 0; i < Integers::MAX_ASCII_VALUE; ++i) {
+bool Floats::parseFloat(float& result, mframe::util::Iterator<char>& iterator) {
+  char cache[Floats::MAX_ASCII_VALUE];
+  for (int i = 0; i < Floats::MAX_ASCII_VALUE; ++i) {
     if (!iterator.next(cache[i]))
       break;
   }
 
-  return Integers::parseInteger(result, cache);
+  return Floats::parseFloat(result, cache);
 }
 
 //-----------------------------------------------------------------------------
-bool Integers::parseInteger(int& result, const char* str) {
-  if (!Integers::isInteger(str))
+bool Floats::parseFloat(float& result, const char* str) {
+  if (!Floats::isFloat(str))
     return false;
 
-  result = strtol(str, nullptr, 0);
+  result = strtof(str, nullptr);
   return true;
 }
 

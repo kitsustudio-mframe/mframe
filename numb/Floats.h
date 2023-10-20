@@ -4,9 +4,8 @@
  *
  * SPDX-License-Identifier: MIT
  */
-
-#ifndef MFRAME_C6CF2DB4_1F61_4562_8698_C0C22D0C69FA
-#define MFRAME_C6CF2DB4_1F61_4562_8698_C0C22D0C69FA
+#ifndef MFRAME_D058821B_1E72_462D_A6EC_00EA14E01C9D
+#define MFRAME_D058821B_1E72_462D_A6EC_00EA14E01C9D
 
 /* ****************************************************************************
  * Include
@@ -16,39 +15,22 @@
 
 //-----------------------------------------------------------------------------
 #include "mframe/lang/Object.h"
+#include "mframe/util/Iterator.h"
 
 /* ****************************************************************************
  * Namespace
  */
 namespace mframe::numb {
-  class Number;
+  class Floats;
 }  // namespace mframe::numb
 
 /* ****************************************************************************
- * Class Integer
+ * Class/Interface/Struct/Enum
  */
-class mframe::numb::Number : public mframe::lang::Object {
-  /* **************************************************************************
-   * Subclass
-   */
- protected:
-  union Value {
-    bool b;
-    uint8_t u8[4];
-    char s8[4];
-    uint16_t u16[2];
-    short s16[2];
-    uint32_t u32;
-    int s32;
-    float f32;
-    double d64;
-  };
-
+class mframe::numb::Floats final : public mframe::lang::Object {
   /* **************************************************************************
    * Variable
    */
- protected:
-  Value mValue;
 
   /* **************************************************************************
    * Abstract Method
@@ -57,44 +39,23 @@ class mframe::numb::Number : public mframe::lang::Object {
   /* **************************************************************************
    * Construct Method
    */
- public:
+ private:
   /**
-   * @brief Construct a new Number object
    *
    */
-  Number(void);
+  Floats(void) = default;
 
   /**
-   * @brief Destroy the Number object
    *
    */
-  virtual ~Number(void) override;
-
+  virtual ~Floats(void) override = default;
   /* **************************************************************************
    * Operator Method
    */
- public:
-  /**
-   * @brief
-   *
-   * @param v
-   * @return true
-   * @return false
-   */
-  inline bool operator==(Number& v) {
-    return (Number::mValue.u32 == v.mValue.u32);
-  }
 
   /* **************************************************************************
-   * Public Method <Override> - mframe::lang::Object
+   * Public Method <Override>
    */
- public:
-  /**
-   * @brief 返回對象的哈希碼值。支持這種方法是為了散列表，如HashMap提供的那樣。
-   *
-   * @return uint32_t 該對象的哈希碼值。
-   */
-  virtual int hashcode(void) const override;
 
   /* **************************************************************************
    * Public Method
@@ -111,14 +72,55 @@ class mframe::numb::Number : public mframe::lang::Object {
   /* **************************************************************************
    * Static Variable
    */
-
+ public:
+  static const int MAX_ASCII_VALUE;
+  static const float MAX_VALUE;
+  static const float MIN_VALUE;
   /* **************************************************************************
    * Static Method
    */
+ public:
+  /**
+   * @brief
+   *
+   * @param iterator
+   * @return true
+   * @return false
+   */
+  static bool isFloat(mframe::util::Iterator<char>& iterator);
+
+  /**
+   * @brief
+   *
+   * @param str
+   * @return true
+   * @return false
+   */
+  static bool isFloat(const char* str);
+
+  /**
+   * @brief
+   *
+   * @param result
+   * @param iterator
+   * @return true
+   * @return false
+   */
+  static bool parseFloat(float& result, mframe::util::Iterator<char>& iterator);
+
+  /**
+   * @brief
+   *
+   * @param result
+   * @param str
+   * @return true
+   * @return false
+   */
+  static bool parseFloat(float& result, const char* str);
 };
 
 /* ****************************************************************************
- *  End of file
+ * End of file
  */
 
-#endif /* MFRAME_C6CF2DB4_1F61_4562_8698_C0C22D0C69FA */
+#endif /* MFRAME_D058821B_1E72_462D_A6EC_00EA14E01C9D */
