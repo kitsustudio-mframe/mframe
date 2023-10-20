@@ -232,6 +232,14 @@ class mframe::lang::Maths final : public mframe::lang::Object {
   static double fabs(double x);
 
   /**
+   * @brief 返回x的絕對值
+   *
+   * @param x
+   * @return float
+   */
+  static float fabsf(float x);
+
+  /**
    * @brief 返回的最大整數值小於或等於x。
    *
    * @param x

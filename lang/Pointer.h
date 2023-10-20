@@ -96,6 +96,10 @@ class mframe::lang::Pointer : public mframe::lang::Object {
     return Pointer::mPointer;
   }
 
+  inline operator const char*(void){
+    return reinterpret_cast<const char*>(Pointer::mPointer);
+  }
+
   /**
    * @brief
    *

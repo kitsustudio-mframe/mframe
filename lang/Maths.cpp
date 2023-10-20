@@ -152,6 +152,11 @@ double Maths::fabs(double x) {
 }
 
 //-----------------------------------------------------------------------------
+float Maths::fabsf(float x) {
+  return std::fabsf(x);
+}
+
+//-----------------------------------------------------------------------------
 double Maths::floor(double x) {
   return std::floor(x);
 }
