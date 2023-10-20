@@ -34,7 +34,7 @@ using mframe::ctrl::SerialPortOutputStream;
  */
 
 //-----------------------------------------------------------------------------
-SerialPortOutputStream::SerialPortOutputStream(mframe::hal::usart::Uart& base) : mBase(base) {
+SerialPortOutputStream::SerialPortOutputStream(mframe::hal::Uart& base) : mBase(base) {
   this->mBase.setUartEventTransfer(this);
   return;
 }
@@ -54,7 +54,7 @@ SerialPortOutputStream::~SerialPortOutputStream(void) {
 
 
 /* ****************************************************************************
- * Public Method <Override> - mframe::hal::usart::UartEventTransfer
+ * Public Method <Override> - mframe::hal::UartEventTransfer
  */
 
 //-----------------------------------------------------------------------------

@@ -32,7 +32,7 @@ using mframe::ctrl::SerialPortInputStream;
  */
 
 //-----------------------------------------------------------------------------
-SerialPortInputStream::SerialPortInputStream(mframe::hal::usart::Uart& base) : mBase(base) {
+SerialPortInputStream::SerialPortInputStream(mframe::hal::Uart& base) : mBase(base) {
   this->mBase.setUartEventReceiver(this);
   return;
 }
