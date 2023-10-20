@@ -229,6 +229,13 @@ class mframe::util::Scanner : public mframe::lang::Object {
   virtual int getNextLineLength(void);
 
   /**
+   * @brief Get the Arg Length object
+   * 
+   * @return int 
+   */
+  virtual int getArgLength(void);
+
+  /**
    * @brief 取得緩衝區來源
    *
    * @return mframe::io::ReadBuffer&

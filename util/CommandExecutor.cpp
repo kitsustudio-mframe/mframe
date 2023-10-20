@@ -84,7 +84,7 @@ void CommandExecutor::execute(void) {
     this->mInput.nextString(this->mBuffer);
     if (this->mBuffer.isEmpty()) {
       this->mOutput << "\r\n"
-                    << this->mHostname << "> ";
+                    << this->mHostname;
       return;
     }
 
@@ -116,7 +116,7 @@ void CommandExecutor::execute(void) {
   }
 
   this->mOutput << "\r\n"
-                << this->mHostname << "> ";
+                << this->mHostname;
   return;
 }
 
@@ -146,14 +146,12 @@ bool CommandExecutor::put(CommandHandler& commandHandler) {
 }
 
 //-----------------------------------------------------------------------------
-
 mframe::util::CommandHandler* CommandExecutor::get(const char* command) {
   Hashcode h = Hashcode(HashGenerator::getHashcodeLowerCast(command));
   return this->mCommandMap.get(h);
 }
 
 //-----------------------------------------------------------------------------
-
 bool CommandExecutor::remove(const char* command) {
   Strings s = Strings(command);
   if (this->mCommandMap.containsKey(s))

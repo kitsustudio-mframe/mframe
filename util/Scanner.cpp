@@ -237,6 +237,32 @@ int Scanner::getNextLineLength(void) {
 }
 
 //-----------------------------------------------------------------------------
+int Scanner::getArgLength(void){
+  int result = 1;
+  this->mIterator.rewind();
+
+  char c = 0;
+  char last = ' ';
+  while (this->mIterator.next(c)) {
+    if(Character::isNextLineSymbol(c))
+      break;
+
+    if (c == ' ' && last != ' ')
+      result++;
+
+    last = c;
+  }
+
+  if(last == ' ')
+    result -= 1;
+
+  if(c == ' ')
+    result -= 1;
+    
+  return result;
+}
+
+//-----------------------------------------------------------------------------
 mframe::io::ReadBuffer& Scanner::getReadBuffer(void) {
   return this->mReadBuffer;
 }
