@@ -19,7 +19,7 @@
 /* ****************************************************************************
  * Namespace
  */
-namespace mframe::hal::usart {
+namespace mframe::hal {
   struct UartEventTransfer;
 }
 
@@ -31,7 +31,7 @@ namespace mframe::hal::usart {
  * @brief [Interface]同步非同步收發器傳輸事件。
  *
  */
-struct mframe::hal::usart::UartEventTransfer : public virtual mframe::lang::Interface {
+struct mframe::hal::UartEventTransfer : public virtual mframe::lang::Interface {
   /* **************************************************************************
    * Method
    */

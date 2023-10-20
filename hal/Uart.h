@@ -20,7 +20,7 @@
 /* ****************************************************************************
  * Namespace
  */
-namespace mframe::hal::usart {
+namespace mframe::hal {
   struct Uart;
 }
 
@@ -32,7 +32,7 @@ namespace mframe::hal::usart {
  * @brief [Interface]硬體抽象層，同步非同步收發器。
  *
  */
-struct mframe::hal::usart::Uart : public mframe::hal::Base {
+struct mframe::hal::Uart : public mframe::hal::Base {
   /* **************************************************************************
    * Method
    */
