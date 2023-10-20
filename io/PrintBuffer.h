@@ -99,6 +99,16 @@ class mframe::io::PrintBuffer final : public mframe::io::RingBuffer {
   /**
    * @brief
    *
+   * @param f
+   * @return PrintBuffer&
+   */
+  inline PrintBuffer& operator<<(float f) {
+    return this->print(f);
+  }
+
+  /**
+   * @brief
+   *
    * @param d
    * @return PrintBuffer&
    */
@@ -135,7 +145,6 @@ class mframe::io::PrintBuffer final : public mframe::io::RingBuffer {
   inline PrintBuffer& operator<<(mframe::io::ReadBuffer& r) {
     return this->print(r);
   }
-
 
  public:
   /**
