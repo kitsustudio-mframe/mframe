@@ -29,16 +29,14 @@ using mframe::ctrl::SerialPort;
 using mframe::io::InputStream;
 using mframe::io::OutputStream;
 
-
-
 /* ****************************************************************************
  * Construct Method
  */
 
 //-----------------------------------------------------------------------------
 SerialPort::SerialPort(mframe::hal::Uart& base) : mBase(base),
-                                                          mSerialPortInputStream(base),
-                                                          mSerialPortOutputStream(base) {
+                                                  mSerialPortInputStream(base),
+                                                  mSerialPortOutputStream(base) {
   return;
 }
 
@@ -51,8 +49,6 @@ SerialPort::~SerialPort(void) {
 /* ****************************************************************************
  * Operator Method
  */
-
-
 
 /* ****************************************************************************
  * Public Method <Override> - mframe::lang::Closeable
@@ -97,10 +93,6 @@ OutputStream& SerialPort::getOutputStream(void) {
 InputStream& SerialPort::getInputStream(void) {
   return this->mSerialPortInputStream;
 }
-
-
-
-
 
 /* ****************************************************************************
  * Protected Method
