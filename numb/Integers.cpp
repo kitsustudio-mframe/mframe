@@ -89,21 +89,39 @@ bool Integers::isInteger(const char* str) {
 
   int i = 1;
 
-  if (str[0] == '0' && (str[1] == 'x' || str[1] == 'X'))
+  if (str[0] == '0' && (str[1] == 'x' || str[1] == 'X')) {
     i = 2;
+    for (; i < Integers::MAX_ASCII_VALUE; ++i) {
+      if (str[i] >= '0' && str[i] <= '9')
+        continue;
 
-  else if ((str[0] == '-') && MACRO_IS_NUMB(str[1]))
-    i = 1;
+      if (str[i] >= 'a' && str[i] <= 'f')
+        continue;
 
-  else if (MACRO_IS_NUMB(str[0]))
-    i = 1;
+      if (str[i] >= 'A' && str[i] <= 'F')
+        continue;
 
-  else
-    return false;
-
-  for (; i < Integers::MAX_ASCII_VALUE; ++i) {
-    if (!MACRO_IS_NUMB(str[i]))
       break;
+    }
+
+  } else if (str[0] == '0') {
+    for (; i < Integers::MAX_ASCII_VALUE; ++i) {
+      if (str[i] >= '0' && str[i] <= '7')
+        continue;
+
+      break;
+    }
+
+  } else {
+    if(str[0] == '-')
+      i = 1;
+
+    for (; i < Integers::MAX_ASCII_VALUE; ++i) {
+      if (str[i] >= '0' && str[i] <= '9')
+        continue;
+
+      break;
+    }
   }
 
   return Character::isNextSymbol(str[i]);
