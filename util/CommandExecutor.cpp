@@ -49,6 +49,7 @@ CommandExecutor::CommandExecutor(int mapSize, int commandSize,
   this->mCommandHandler = nullptr;
   this->mPause = false;
   this->mResult = false;
+  this->mAutoNextLine = true;
   this->mHostname = "";
   this->put(this->mCommandHandlerDefaultHelp);
   return;
@@ -91,7 +92,8 @@ void CommandExecutor::execute(void) {
     Hashcode h = Hashcode(HashGenerator::getHashcodeLowerCast(this->mBuffer));
     this->mCommandHandler = this->mCommandMap.get(h);
     if (this->mCommandHandler) {
-      this->out() << "\r\n";
+      if(this->mAutoNextLine)
+        this->out() << "\r\n";
       result = this->mCommandHandler->onCommand(*this);
     }
 
@@ -108,13 +110,8 @@ void CommandExecutor::execute(void) {
   if (!this->mPause) {
     this->mResult = result;
     this->mCommandHandler = nullptr;
-
-    if (result)
-      this->mOutput << Character::CHAR_ACK;
-    else
-      this->mOutput << Character::CHAR_NAK;
   }
-
+  
   this->mOutput << "\r\n"
                 << this->mHostname;
   return;

@@ -48,6 +48,7 @@ class mframe::util::CommandExecutor : public mframe::lang::Object,
   char mSplitCharacter;
   bool mPause;
   bool mResult;
+  bool mAutoNextLine;
 
   /* **************************************************************************
    * Abstract Method
@@ -104,9 +105,30 @@ class mframe::util::CommandExecutor : public mframe::lang::Object,
    *
    * @param attachment
    */
-  inline void setAttachment(void* attachment) {
+  inline CommandExecutor& setAttachment(void* attachment) {
     this->mAttachment = attachment;
-    return;
+    return *this;
+  }
+
+  /**
+   * @brief Get the Auto Next Line object
+   * 
+   * @return true 
+   * @return false 
+   */
+  inline bool getAutoNextLine(void){
+    return this->mAutoNextLine;
+  }
+
+  /**
+   * @brief Set the Auto Next Line object
+   * 
+   * @param enable 
+   * @return CommandExecutor& 
+   */
+  inline CommandExecutor& setAutoNextLine(bool enable){
+    this->mAutoNextLine = enable;
+    return *this;
   }
 
   /**
