@@ -57,6 +57,7 @@ class mframe::sys::Svchost : public mframe::lang::Object,
   mframe::sys::Thread* mUserThread;
   mframe::io::ReadBuffer* mCustomReadBuffer;
   mframe::io::WriteBuffer* mCustomWriteBuffer;
+  int mDelay;
   bool mStart;
   bool mAction;
   bool mStream;
@@ -111,6 +112,26 @@ class mframe::sys::Svchost : public mframe::lang::Object,
    * Public Method
    */
  public:
+  /**
+   * @brief Set the Service Delay object
+   * 
+   * @param value 
+   * @return Svchost& 
+   */
+  inline Svchost& setServiceDelay(int value){
+    this->mDelay = value;
+    return *this;
+  }
+
+  /**
+   * @brief Get the Service Delay object
+   * 
+   * @return int 
+   */
+  inline int getServiceDelay(void){
+    return this->mDelay;
+  }
+  
   /**
    * @brief
    *

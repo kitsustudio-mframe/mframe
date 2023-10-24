@@ -56,6 +56,7 @@ Svchost::Svchost(SystemConfig& config) : mOutputStream(*config.console.outputStr
   this->mUserThread = nullptr;
   this->mCustomReadBuffer = nullptr;
   this->mCustomWriteBuffer = nullptr;
+  this->mDelay = 10;
   this->mThread = &System::allocThread(*this, config.svchost.stackSize);
 
   if (this->mThread == nullptr)
@@ -112,7 +113,7 @@ void Svchost::run(void) {
 
   while (this->mStart) {
     this->action();
-    this->wait(100);
+    this->wait(this->mDelay);
   }
 }
 
